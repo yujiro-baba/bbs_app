@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreatePost extends FormRequest
+class WritePost extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class CreatePost extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,16 +24,7 @@ class CreatePost extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:20',
             'talktheme' => 'required',
-        ];
-    }
-
-    public function attributes()
-    {
-        return [
-            'title' => 'タイトル',
-            'content' => 'トークテーマ',
         ];
     }
 }

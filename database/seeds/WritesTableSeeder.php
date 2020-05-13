@@ -4,7 +4,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PostsTableSeeder extends Seeder
+class WritesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,9 +16,9 @@ class PostsTableSeeder extends Seeder
         $titles = ['食べ物', '仕事', '旅行'];
 
         foreach ($titles as $title) {
-            DB::table('posts')->insert([
-                'title' => $title,
-                'talktheme' => "${title}について話し合いましょう！",
+            DB::table('writes')->insert([
+                'post_id' => 1,
+                'content' => "${title}は僕も好きです！",
                 'write_time' => Carbon::now(),
             ]);
         }

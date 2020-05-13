@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">新規作成</div>
+                <div class="card-header">投稿フォーム</div>
                 <div class="card-body">
                     <div class="form-group">
                         @if($errors->any())
@@ -17,15 +17,11 @@
                             </ul>
                             </div>
                         @endif
-                        <form action="{{ route('posts.create') }}" method="post">
+                        <form action="{{ route('posts.write') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="exampleInputEmail1">タイトル</label>
-                                <input type="text" class="form-control" id="title"  name="title" value="{{ old('title') }}">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">トークテーマ</label>
-                                <input type="text" class="form-control" id="talktheme"  name="talktheme" value="{{ old('talktheme') }}">
+                                <label for="exampleFormControlTextarea1">書き込み内容</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content" value="{{ old('content') }}"></textarea>
                             </div>
                             <div class="text-right">
                             <button type="submit" class="btn btn-primary">送信</button>

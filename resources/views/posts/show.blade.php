@@ -10,13 +10,25 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">{{ $post->title }}</h5>
-                        <p class="card-text">{{ $post->content }}</p>
+                        <p class="card-text">{{ $post->talktheme }}</p>
+                        <a href="{{ route('posts.write') }}" class="btn btn-primary">書き込む</a>
                     </div>
                 </div>
 
                 <div class="card-footer text-muted">
                     {{ $post->write_time }}
                 </div>
+
+                @foreach($writes as $write)
+                    <div class="card">
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                            <p>{{ $write->content }}</p>
+                            <footer class="blockquote-footer">{{ $write->write_time }}</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                @endforeach
 
             </div>
         </div>
