@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $post->title }}</h5>
                         <p class="card-text">{{ $post->talktheme }}</p>
-                        <a href="{{ route('posts.show',$post->id) }}" class="btn btn-primary">詳細</a>
+                        <a href="{{ route('posts.detail',$post->id) }}" class="btn btn-primary">全てを見る</a>
                     </div>
                 </div>
 

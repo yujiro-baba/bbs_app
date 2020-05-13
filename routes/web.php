@@ -15,7 +15,7 @@ Route::get('/posts', 'PostController@index')->name('posts.index');
 Route::get('/posts/create', 'PostController@showCreateForm')->name('posts.create');
 Route::post('/posts/create', 'PostController@create');
 
-Route::get('/posts/show{post}', 'PostController@show')->name('posts.show');
+Route::get('/posts/detail/{post}', 'PostController@detail')->name('posts.detail');
 
 Route::get('/posts/write', 'PostController@showWriteForm')->name('posts.write');
 Route::post('/posts/write', 'PostController@write');

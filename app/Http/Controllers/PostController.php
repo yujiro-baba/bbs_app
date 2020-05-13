@@ -38,13 +38,13 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }   
 
-    public function show(Post $post)
+    public function detail(Post $post)
     {
         $select_post = Post::find($post->id);
 
         $writes = Write::where('post_id', $select_post->id)->get();
 
-        return view('posts/show', [
+        return view('posts/detail', [
             'post' => $post,
             'writes' => $writes,
         ]);
