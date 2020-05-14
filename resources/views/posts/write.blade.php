@@ -17,7 +17,7 @@
                             </ul>
                             </div>
                         @endif
-                        <form action="{{ route('posts.write') }}" method="post">
+                        <form action="{{ route('posts.write' ,$post->id)}}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">書き込み内容</label>

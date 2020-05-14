@@ -40,9 +40,8 @@ class PostController extends Controller
 
     public function detail(Post $post)
     {
-        $select_post = Post::find($post->id);
 
-        $writes = Write::where('post_id', $select_post->id)->get();
+        $writes = $post->writes()->get();
 
         return view('posts/detail', [
             'post' => $post,
@@ -50,20 +49,24 @@ class PostController extends Controller
         ]);
     }
 
-    public function showWriteForm()
+    public function showWriteForm(Post $post)
     {
-        return view('posts/write');
+        return view('posts/write', [
+            'post' => $post,
+        ]);
     }
 
-    public function write(WritePost $request)
+    public function write(Post $post, WritePost $request)
     {
+        $write = new Write();
+        $write->content = $request->content;
+        $write->write_time = Carbon::now();
 
-        $post->content = $request->content;
-        $post->write_time = Carbon::now();
-    
-        $post->save();
+        $post->writes()->save($write);
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.detail', [
+            'id' => $post->id,
+        ]);
     }   
 }
 

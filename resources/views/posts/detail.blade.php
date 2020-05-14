@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $post->title }}</h5>
                         <p class="card-text">{{ $post->talktheme }}</p>
-                        <a href="{{ route('posts.write') }}" class="btn btn-primary">書き込む</a>
+                        <a href="{{ route('posts.write' ,$post->id) }}" class="btn btn-primary">書き込む</a>
                     </div>
                 </div>
 
