@@ -19,7 +19,7 @@
                 <div class="card-footer text-muted">
                     {{ $post->write_time }}
                 </div>
-                @endforeach
+                @endforeach 
 
             </div>
         </div>
