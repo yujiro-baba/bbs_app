@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title',20);
             $table->text('talktheme');
-            $table->timestamp('write_time');
+            $table->date('post_time');
         });
     }
 

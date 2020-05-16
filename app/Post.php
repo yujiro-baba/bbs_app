@@ -14,9 +14,9 @@ class Post extends Model
         return $this->hasMany('App\Write');
     }
 
-    public function getFormattedDueDateAttribute()
+    public function getFormattedPostTimeAttribute()
     {
-        return Carbon::createFromFormat('Y-m-d', $this->attributes['due_date'])
+        return Carbon::createFromFormat('Y-m-d', $this->attributes['post_time'])
             ->format('Y/m/d');
     }
 }

@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="card-footer text-muted">
-                    {{ $post->write_time }}
+                    投稿日：{{ $post->formatted_post_time }}
                 </div>
                 @endforeach 
 

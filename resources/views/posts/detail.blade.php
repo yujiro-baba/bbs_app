@@ -15,16 +15,14 @@
                     </div>
                 </div>
 
-                <div class="card-footer text-muted">
-                    {{ $post->write_time }}
-                </div>
+                <div class="card-footer text-muted"></div>
 
                 @foreach($writes as $write)
                     <div class="card">
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
                             <p>{{ $write->content }}</p>
-                            <footer class="blockquote-footer">{{ $write->write_time }}</footer>
+                            <footer class="blockquote-footer">{{ $write->formatted_write_time }}</footer>
                             </blockquote>
                         </div>
                     </div>

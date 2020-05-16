@@ -19,7 +19,7 @@ class PostsTableSeeder extends Seeder
             DB::table('posts')->insert([
                 'title' => $title,
                 'talktheme' => "${title}について話し合いましょう！",
-                'write_time' => Carbon::now(),
+                'post_time' => Carbon::now('Asia/Tokyo'),
             ]);
         }
     }

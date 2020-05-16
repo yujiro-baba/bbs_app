@@ -19,7 +19,7 @@ class WritesTableSeeder extends Seeder
             DB::table('writes')->insert([
                 'post_id' => 1,
                 'content' => "${title}は僕も好きです！",
-                'write_time' => Carbon::now(),
+                'write_time' => Carbon::now('Asia/Tokyo')
             ]);
         }
     }
