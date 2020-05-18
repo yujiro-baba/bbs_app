@@ -9,6 +9,7 @@ use App\Http\Requests\CreatePost;
 use App\Http\Requests\WritePost;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -20,12 +21,9 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        
-        $users = $posts->users->get();
 
         return view('posts/index', [
             'posts' => $posts,
-            'users' => $users,
         ]);
     }
 
@@ -37,7 +35,8 @@ class PostController extends Controller
     public function create(CreatePost $request)
     {
         $post = new Post();
-
+        
+        $post->user_id = Auth::user()->id;
         $post->title = $request->title;
         $post->talktheme = $request->talktheme;
         $post->post_time = Carbon::now();
