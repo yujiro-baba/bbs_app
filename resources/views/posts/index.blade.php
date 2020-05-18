@@ -5,7 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">掲示板</div>
+                <div class="card-header">
+                    <ul class="nav nav-pills card-header-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">掲示板</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('posts.create') }}">新規作成</a>
+                    </li>
+                    </ul>
+                </div>
 
                 @foreach($posts as $post)
                 <div class="card">

@@ -33,7 +33,7 @@ class CreatePost extends FormRequest
     {
         return [
             'title' => 'タイトル',
-            'content' => 'トークテーマ',
+            'talktheme' => 'トークテーマ',
         ];
     }
 }

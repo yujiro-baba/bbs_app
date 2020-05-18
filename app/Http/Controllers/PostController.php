@@ -36,7 +36,7 @@ class PostController extends Controller
 
         $post->title = $request->title;
         $post->talktheme = $request->talktheme;
-        $post->write_time = Carbon::now();
+        $post->post_time = Carbon::now();
     
         $post->save();
 
@@ -45,7 +45,7 @@ class PostController extends Controller
 
     public function detail(Post $post)
     {
-
+        
         $writes = $post->writes()->get();
 
         return view('posts/detail', [
