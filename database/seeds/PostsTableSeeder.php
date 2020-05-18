@@ -17,6 +17,7 @@ class PostsTableSeeder extends Seeder
 
         foreach ($titles as $title) {
             DB::table('posts')->insert([
+                'user_id' => 1,
                 'title' => $title,
                 'talktheme' => "${title}について話し合いましょう！",
                 'post_time' => Carbon::now('Asia/Tokyo'),

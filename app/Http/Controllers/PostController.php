@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Post;
 use App\Write; 
 use App\Http\Requests\CreatePost;
@@ -19,9 +20,12 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+        
+        $users = $posts->users->get();
 
         return view('posts/index', [
             'posts' => $posts,
+            'users' => $users,
         ]);
     }
 

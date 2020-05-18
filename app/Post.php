@@ -14,6 +14,11 @@ class Post extends Model
         return $this->hasMany('App\Write');
     }
 
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
     public function getFormattedPostTimeAttribute()
     {
         return Carbon::createFromFormat('Y-m-d', $this->attributes['post_time'])
