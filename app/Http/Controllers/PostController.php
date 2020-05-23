@@ -76,5 +76,25 @@ class PostController extends Controller
             'id' => $post->id,
         ]);
     }   
+
+    public function showDeleteForm(Post $post)
+    {
+        return view('posts/delete', [
+            'post' => $post,
+        ]);
+    }
+
+    public function delete(Post $post, Request $request)
+    {
+        $write = new Write();
+        $write->content = $request->content;
+        $write->write_time = Carbon::now();
+
+        $post->writes()->save($write);
+
+        return redirect()->route('posts.detail', [
+            'id' => $post->id,
+        ]);
+    }   
 }
 

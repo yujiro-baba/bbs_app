@@ -21,6 +21,9 @@ Route::get('/posts/detail/{post}', 'PostController@detail')->name('posts.detail'
 Route::get('/posts/detail/{post}/write', 'PostController@showWriteForm')->name('posts.write');
 Route::post('/posts/detail/{post}/write', 'PostController@write');
 
+Route::get('/posts/delete/{post}/', 'PostController@showDeleteForm')->name('posts.delete');
+Route::post('/posts/delete/{post}/', 'PostController@delete');
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
