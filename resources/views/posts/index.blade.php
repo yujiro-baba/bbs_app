@@ -8,7 +8,7 @@
                 <div class="card-header">
                     <ul class="nav nav-pills card-header-pills">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">掲示板</a>
+                        <a class="nav-link" href="#">掲示</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('posts.create') }}">新規作成</a>
